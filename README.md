@@ -32,3 +32,4 @@ git branch --set-upstream-to=origin/main main
 
 - [NeoVim](https://github.com/neovim/neovim/blob/master/INSTALL.md)
 - [NvChad](https://nvchad.com/)
+- [win32yank](https://github.com/equalsraf/win32yank/releases)
