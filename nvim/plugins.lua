@@ -47,6 +47,11 @@ local plugins = {
         config = function ()
             require("guess-indent").setup {}
         end
+    },
+    {
+        'charludo/projectmgr.nvim',
+        cmd = "ProjectMgr",
+        lazy = false
     }
 }
 

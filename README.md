@@ -28,6 +28,15 @@ git config --global user.email "advaitharunjeena@gmail.com"
 git branch --set-upstream-to=origin/main main
 ```
 
+## Tmux
+
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+cd ~/.config/tmux
+```
+
+`<C-b>I` to initialize.
+
 ## Quick Links
 
 - [NeoVim](https://github.com/neovim/neovim/blob/master/INSTALL.md)
