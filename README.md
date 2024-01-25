@@ -8,6 +8,19 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
+```bash
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+
+alias art="php artisan"
+alias vim=nvim
+
+if [ -z "$TMUX" ]
+then
+    tmux has-session -t 0 2>/dev/null || tmux new-session -d -s 0 -c $(pwd)
+    exec tmux attach -t 0
+fi
+```
+
 ## SSH keygen
 
 ```bash
@@ -36,6 +49,32 @@ cd ~/.config/tmux
 ```
 
 `<C-b>I` to initialize.
+
+## Nginx Config
+
+```nginx
+proxy_http_version 1.1;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection 'upgrade';
+proxy_set_header Host $host;
+proxy_cache_bypass $http_upgrade;
+
+location / {
+    proxy_pass http://localhost:3000;
+}
+
+location /api {
+    proxy_pass http://127.0.0.1:8000;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $host;
+    proxy_redirect off;
+
+    proxy_connect_timeout       70s;
+    proxy_send_timeout          86400;
+    proxy_read_timeout          86400;
+    send_timeout                86400;
+}
+```
 
 ## Quick Links
 
