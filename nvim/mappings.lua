@@ -13,7 +13,5 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
-
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gIc<Left><Left><Left><Left>]])
 vim.keymap.set('v', '<leader>s', [[:<C-u>lua vim.cmd('normal! gvy') local s = vim.fn.getreg('"') vim.cmd(':%s/' .. s .. '//gIc')<Left><Left><Left><Left><Left><Left>]])
