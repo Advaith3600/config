@@ -1,0 +1,7 @@
+[user]
+	name = Advaith A J
+	email = advaitharunjeena@gmail.com
+[init]
+	defaultBranch = main
+[core]
+	editor = vim

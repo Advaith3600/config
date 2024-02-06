@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Variables
+DIR_NAME=$1
+SESSION_NAME=$(tmux display-message -p "#S")
+
+tmux send-keys -t $SESSION_NAME 'dev' C-m
+tmux send-keys -t $SESSION_NAME "cd $DIR_NAME/Backend" C-m
+tmux send-keys -t $SESSION_NAME 'source venv/bin/activate' C-m
+tmux send-keys -t $SESSION_NAME 'python manage.py runserver' C-m
+
+tmux split-window -h -t $SESSION_NAME
+
+tmux send-keys -t $SESSION_NAME 'dev' C-m
+tmux send-keys -t $SESSION_NAME "cd $DIR_NAME/Frontend" C-m
+tmux send-keys -t $SESSION_NAME 'npm run dev' C-m
+
+tmux split-window -v -t $SESSION_NAME
+
+tmux new-window -t $SESSION_NAME
+
+# Create the first pane with vim running
+tmux send-keys -t $SESSION_NAME 'dev' C-m
+tmux send-keys -t $SESSION_NAME "cd $DIR_NAME/Frontend" C-m
+tmux send-keys -t $SESSION_NAME 'vim .' C-m

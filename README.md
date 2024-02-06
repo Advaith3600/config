@@ -11,12 +11,21 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 ```bash
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
+DEVELOPMENT_DIR="/home/advaith/development"
+
 alias art="php artisan"
 alias vim=nvim
+alias dev="cd $DEVELOPMENT_DIR"
+alias setup="cd $DEVELOPMENT_DIR/config && ./setup $1"
 
 if [ -z "$TMUX" ]
 then
-    tmux has-session -t 0 2>/dev/null || tmux new-session -d -s 0 -c $(pwd)
+    tmux has-session -t 0 2>/dev/null || { 
+        if [[ -z "$(pwd)" || "$(pwd)" == "/root" ]]; 
+        then tmux new-session -d -s 0 -c $DEVELOPMENT_DIR;
+        else tmux new-session -d -s 0 -c $(pwd); 
+        fi 
+    }; 
     exec tmux attach -t 0
 fi
 ```
@@ -31,14 +40,6 @@ cat ~/.ssh/id_ed25519.pub
 
 ssh -T git@github.com
 ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts
-```
-
-## Git init
-
-```bash
-git config --global user.name "Advaith A J"
-git config --global user.email "advaitharunjeena@gmail.com"
-git branch --set-upstream-to=origin/main main
 ```
 
 ## Tmux
