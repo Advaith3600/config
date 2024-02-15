@@ -15,3 +15,5 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gIc<Left><Left><Left><Left>]])
 vim.keymap.set('v', '<leader>s', [[:<C-u>lua vim.cmd('normal! gvy') local s = vim.fn.getreg('"') vim.cmd(':%s/' .. s .. '//gIc')<Left><Left><Left><Left><Left><Left>]])
+
+vim.keymap.set('n', '<leader>fx', vim.diagnostic.open_float);

@@ -13,7 +13,10 @@ local plugins = {
                 "eslint-lsp",
                 "typescript-language-server",
                 "tailwindcss-language-server",
-                "pyright"
+                "pyright",
+                "emmet-language-server",
+                "css-lsp",
+                "html-lsp"
             }
         }
     },
@@ -38,6 +41,8 @@ local plugins = {
                 "javascript",
                 "typescript",
                 "tsx",
+                "html",
+                "css",
             }
             return opts
         end
@@ -46,20 +51,19 @@ local plugins = {
         "NMAC427/guess-indent.nvim",
         cmd = "GuessIndent",
         lazy = false,
-        config = function ()
-            require("guess-indent").setup { }
+        config = function()
+            require("guess-indent").setup {}
         end
     },
     {
         'charludo/projectmgr.nvim',
         cmd = "ProjectMgr",
-        lazy = false
     },
     {
         "Pocco81/auto-save.nvim",
         lazy = false,
         config = function()
-            require("auto-save").setup { }
+            require("auto-save").setup {}
         end,
     }
 }

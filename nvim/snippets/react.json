@@ -1,0 +1,45 @@
+{
+    "NextClientComponent": {
+        "prefix": "ncc",
+        "body": [
+            "'use client';",
+            "",
+            "import React from 'react';",
+            "",
+            "const ${1:${TM_FILENAME_BASE}} = () => {",
+            "  return (",
+            "    <div>${1:first}</div>",
+            "  );",
+            "};",
+            "",
+            "export default ${1:${TM_FILENAME_BASE}};"
+        ],
+        "description": "Creates next client component"
+    },
+    "NextServerComponent": {
+        "prefix": "nsc",
+        "body": [
+            "import React from 'react';",
+            "",
+            "const ${1:${TM_FILENAME_BASE}} = async () => {",
+            "  return (",
+            "    <div>${1:first}</div>",
+            "  );",
+            "};",
+            "",
+            "export default ${1:${TM_FILENAME_BASE}};"
+        ],
+        "description": "Creates next server component"
+    },
+    "ReactComponent": {
+        "prefix": "rc",
+        "body": [
+            "const ${1:${TM_FILENAME_BASE}} = ({ ${2} }: { ${3} }) => {",
+            "  return (",
+            "    <div>${1:first}</div>",
+            "  );",
+            "};"
+        ],
+        "description": "Creates next server component"
+    }
+}
