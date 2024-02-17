@@ -23,7 +23,7 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
-if os.execute('command -v win32yank.exe > /dev/null 2>&1') then
+if os.execute('command -v win32yank.exe > /dev/null 2>&1') == 0 then
     vim.g.clipboard = {
         name = "win32yank-wsl",
         copy = {
