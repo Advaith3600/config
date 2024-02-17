@@ -5,7 +5,14 @@ M.ui = {
     theme = 'pastelDark',
     transparency = true,
     statusline = {
-        theme = "vscode_colored",
+        -- hide statusline
+        overriden_modules = function(modules)
+            for i = 1, #modules do
+                modules[i] = (function()
+                    return ""
+                end)()
+            end
+        end,
     },
     ---@type HLTable
     hl_add = {
