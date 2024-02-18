@@ -82,3 +82,4 @@ location /api {
 - [NeoVim](https://github.com/neovim/neovim/blob/master/INSTALL.md)
 - [NvChad](https://nvchad.com/)
 - [win32yank](https://github.com/equalsraf/win32yank/releases)
+- [Zoxide](https://github.com/ajeetdsouza/zoxide)

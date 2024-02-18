@@ -1,5 +1,8 @@
 local base = require("plugins.configs.lspconfig")
-local on_attach = base.on_attach
+local on_attach = function(client, bufnr)
+  base.on_attach(client, bufnr)
+  client.server_capabilities.documentFormattingProvider = true
+end
 local capabilities = base.capabilities
 
 local lspconfig = require("lspconfig")
