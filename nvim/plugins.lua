@@ -49,21 +49,35 @@ local plugins = {
     },
     {
         "NMAC427/guess-indent.nvim",
-        cmd = "GuessIndent",
         lazy = false,
         config = function()
             require("guess-indent").setup {}
         end
     },
     {
-        'charludo/projectmgr.nvim',
-        cmd = "ProjectMgr",
-    },
-    {
         "Pocco81/auto-save.nvim",
         lazy = false,
         config = function()
             require("auto-save").setup {}
+        end,
+    },
+    {
+        "nanotee/zoxide.vim",
+        cmd = "Z"
+    },
+    {
+        "kylechui/nvim-surround",
+        lazy = false,
+        config = function()
+            require("nvim-surround").setup {}
+        end
+    },
+    {
+        'Wansmer/treesj',
+        keys = { "<leader>m" },
+        requires = { 'nvim-treesitter/nvim-treesitter' },
+        config = function()
+            require('treesj').setup {}
         end,
     }
 }
