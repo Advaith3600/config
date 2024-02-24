@@ -2,22 +2,30 @@
 local M = {}
 
 M.ui = {
-    theme = 'pastelDark',
+    theme = 'catppuccin',
     transparency = true,
     statusline = {
-        -- hide statusline
+        theme = "minimal",
+        separator_style = "round",
         overriden_modules = function(modules)
-            for i = 1, #modules do
-                modules[i] = (function()
+            local toHide = { 1, 7, 9, 11 }
+            for i = 1, #toHide do
+                modules[toHide[i]] = (function()
                     return ""
                 end)()
             end
-        end,
+            local lastIndex = 10
+            modules[lastIndex] = (function()
+                local str = modules[lastIndex]
+                local pos = str:find(' %#ST_EmptySpace#', 1, true)
+                if pos then
+                    return str:sub(1, pos-1) .. str:sub(pos+#' %#ST_EmptySpace#')
+                else
+                    return str
+                end
+            end)()
+        end
     },
-    ---@type HLTable
-    hl_add = {
-        NvimTreeOpenedFolderName = { fg = "green", bold = true },
-    }
 }
 M.plugins = "custom.plugins"
 

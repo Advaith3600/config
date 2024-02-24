@@ -25,8 +25,11 @@ local plugins = {
         ft = {
             "typescriptreact",
             "javascriptreact",
-            "tsx", "vue", "astro",
-            "html", "svelte"
+            "tsx",
+            "vue",
+            "astro",
+            "html",
+            "svelte",
         },
         config = function()
             require("nvim-ts-autotag").setup()
@@ -79,6 +82,34 @@ local plugins = {
         config = function()
             require('treesj').setup {}
         end,
+    },
+    {
+        "Exafunction/codeium.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "hrsh7th/nvim-cmp",
+        },
+        lazy = false,
+        config = function()
+            require("codeium").setup {}
+        end,
+    },
+    {
+        "christoomey/vim-tmux-navigator",
+        cmd = {
+            "TmuxNavigateLeft",
+            "TmuxNavigateDown",
+            "TmuxNavigateUp",
+            "TmuxNavigateRight",
+            "TmuxNavigatePrevious",
+        },
+        keys = {
+            { "<c-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>" },
+            { "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
+            { "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
+            { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
+            { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+        },
     }
 }
 
