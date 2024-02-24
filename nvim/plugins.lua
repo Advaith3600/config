@@ -84,15 +84,12 @@ local plugins = {
         end,
     },
     {
-        "Exafunction/codeium.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "hrsh7th/nvim-cmp",
-        },
+        'Exafunction/codeium.vim',
         lazy = false,
-        config = function()
-            require("codeium").setup {}
-        end,
+        config = function ()
+            vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+            vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+        end
     },
     {
         "christoomey/vim-tmux-navigator",
@@ -102,13 +99,6 @@ local plugins = {
             "TmuxNavigateUp",
             "TmuxNavigateRight",
             "TmuxNavigatePrevious",
-        },
-        keys = {
-            { "<c-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>" },
-            { "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
-            { "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
-            { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
-            { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
         },
     }
 }

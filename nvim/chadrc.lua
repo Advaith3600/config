@@ -27,6 +27,18 @@ M.ui = {
         end
     },
 }
+
 M.plugins = "custom.plugins"
+
+M.mappings = {
+    general = {
+        n = {
+            ["<C-h>"] = { "<cmd>TmuxNavigateLeft<cr>", "Navigate left" },
+            ["<C-j>"] = { "<cmd>TmuxNavigateDown<cr>", "Navigate down" },
+            ["<C-k>"] = { "<cmd>TmuxNavigateUp<cr>", "Navigate up" },
+            ["<C-l>"] = { "<cmd>TmuxNavigateRight<cr>", "Navigate right" },
+        }
+    }
+}
 
 return M
