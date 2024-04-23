@@ -83,3 +83,5 @@ location /api {
 - [NvChad](https://nvchad.com/)
 - [win32yank](https://github.com/equalsraf/win32yank/releases)
 - [Zoxide](https://github.com/ajeetdsouza/zoxide)
+- [NVM](https://github.com/nvm-sh/nvm)
+- [NerdFonts](https://www.nerdfonts.com/font-downloads)
