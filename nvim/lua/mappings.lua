@@ -33,3 +33,9 @@ map("v", "<leader>s", ":call SubstituteVisualSelection()<CR>", { desc = "Substit
 
 map('n', '<leader>fx', vim.diagnostic.open_float)
 map('n', '<leader>fg', ':GuessIndent<CR>')
+
+map('n', "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Navigate left" })
+map('n', "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Navigate down" })
+map('n', "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Navigate up" })
+map('n', "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Navigate right" })
+
