@@ -46,6 +46,7 @@ return {
         "tsx",
         "typescript",
         "javascript",
+        "markdown"
       },
     },
   },
