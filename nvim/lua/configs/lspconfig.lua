@@ -7,7 +7,7 @@ local lspconfig = require "lspconfig"
 local servers = {
   "html", "cssls", "tsserver",
   "tailwindcss", "eslint", "pyright",
-  "emmet_language_server",
+  "emmet_language_server", "marksman"
 }
 
 -- lsps with default config

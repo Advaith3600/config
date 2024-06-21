@@ -29,6 +29,7 @@ return {
         "tailwindcss-language-server",
         "pyright",
         "emmet-language-server",
+        "marksman"
       },
     },
   },
