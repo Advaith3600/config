@@ -1,9 +1,17 @@
 # Personal Configuration 
 
+## Neovim Installation
+
+```bash
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt update
+sudo apt install neovim
+```
+
 ## Zsh Installation
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo apt install zsh && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
@@ -11,7 +19,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 ```bash
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
-DEVELOPMENT_DIR="/home/advaith/development"
+DEVELOPMENT_DIR="~/development"
 
 alias art="php artisan"
 alias vim=nvim
@@ -30,7 +38,7 @@ then
 fi
 ```
 
-## SSH keygen
+## SSH Keygen
 
 ```bash
 ssh-keygen -t ed25519 -C "advaitharunjeena@gmail.com"
@@ -42,11 +50,21 @@ ssh -T git@github.com
 ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts
 ```
 
+## Link Configs
+
+```bash
+git clone git@github.com:Advaith3600/config.git && cd config
+ln .gitconfig ~/.gitconfig
+ln .tmux.conf ~/.tmux.conf
+ln .vimrc ~/.vimrc
+cp -r nvim ~/.config/
+```
+
 ## Tmux
 
 ```bash
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-cd ~/.config/tmux
+tmux source ~/.tmux.conf
 ```
 
 `<C-b>I` to initialize.
