@@ -26,7 +26,7 @@ return {
         "tailwindcss-language-server",
         "pyright",
         "emmet-language-server",
-        "marksman"
+        "marksman",
       },
     },
   },
@@ -43,7 +43,16 @@ return {
         "tsx",
         "typescript",
         "javascript",
-        "markdown"
+        "markdown",
+      },
+    },
+  },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      git = {
+        ignore = false,
       },
     },
   },
@@ -125,5 +134,12 @@ return {
       "TmuxNavigateRight",
       "TmuxNavigatePrevious",
     },
+  },
+
+  {
+    "mg979/vim-visual-multi",
+    branch = "master",
+    lazy = false,
+    config = function() end,
   },
 }
