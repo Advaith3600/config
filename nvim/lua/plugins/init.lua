@@ -27,6 +27,7 @@ return {
         "pyright",
         "emmet-language-server",
         "marksman",
+        "phpactor"
       },
     },
   },
@@ -44,6 +45,8 @@ return {
         "typescript",
         "javascript",
         "markdown",
+        "php",
+        "python"
       },
     },
   },
@@ -113,8 +116,12 @@ return {
   },
 
   {
-    "Exafunction/codeium.vim",
+    "Exafunction/windsurf.vim",
     lazy = false,
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
     config = function()
       vim.keymap.set("i", "<C-g>", function()
         return vim.fn["codeium#Accept"]()
