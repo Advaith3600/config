@@ -36,6 +36,14 @@ then
     }; 
     exec tmux attach -t 0
 fi
+
+export BROWSER=$DEVELOPMENT_DIR/config/open-browser.sh
+```
+
+### Install xdg-open for WSL (For windsurf chat)
+
+```bash
+sudo apt install xdg-utils
 ```
 
 ## SSH Keygen
