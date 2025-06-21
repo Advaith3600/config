@@ -71,7 +71,7 @@ return {
 
   {
     "kylechui/nvim-surround",
-    lazy = false,
+    keys = { "ys", "ds", "cs" },
     config = function()
       require("nvim-surround").setup {}
     end,
@@ -87,14 +87,22 @@ return {
   },
 
   {
-    'Exafunction/windsurf.vim',
+    "Exafunction/windsurf.vim",
     lazy = false,
-    config = function ()
-      vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-      vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
-      vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
-      vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
-    end
+    config = function()
+      vim.keymap.set("i", "<C-g>", function()
+        return vim.fn["codeium#Accept"]()
+      end, { expr = true, silent = true })
+      vim.keymap.set("i", "<c-;>", function()
+        return vim.fn["codeium#CycleCompletions"](1)
+      end, { expr = true, silent = true })
+      vim.keymap.set("i", "<c-,>", function()
+        return vim.fn["codeium#CycleCompletions"](-1)
+      end, { expr = true, silent = true })
+      vim.keymap.set("i", "<c-x>", function()
+        return vim.fn["codeium#Clear"]()
+      end, { expr = true, silent = true })
+    end,
   },
 
   {
@@ -111,12 +119,24 @@ return {
   {
     "mg979/vim-visual-multi",
     branch = "master",
-    lazy = false,
-    config = function() end,
-    init = function()
-      vim.g.VM_maps = {
-        ["Find Under"] = "<C-\\>",
-      }
-    end,
+    keys = {
+      { "<C-n>", mode = { "n", "v" } },
+    },
+  },
+
+  {
+    "sindrets/diffview.nvim",
+    cmd = { "DiffviewOpen", "DiffviewClose" },
+    keys = {
+      { "<leader>go", "<cmd>DiffviewOpen<cr>", desc = "Diff View Open" },
+      { "<leader>gc", "<cmd>DiffviewClose<cr>", desc = "Diff View Close" },
+    },
+  },
+
+  {
+    "jvgrootveld/telescope-zoxide",
+    keys = {
+      { "<leader>z", "<cmd>Telescope zoxide list<cr>", desc = "Zoxide" },
+    },
   },
 }
