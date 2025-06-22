@@ -40,10 +40,18 @@ fi
 export BROWSER=$DEVELOPMENT_DIR/config/open-browser.sh
 ```
 
-### Install xdg-open for WSL (For windsurf chat)
+## Install xdg-open for WSL (For windsurf chat)
 
 ```bash
 sudo apt install xdg-utils
+```
+
+## Ubuntu update (fzf requires latest version)
+
+```bash
+lsb_release -a
+vim /etc/update-manager/release-upgrades
+do-release-upgrade
 ```
 
 ## SSH Keygen
@@ -106,8 +114,9 @@ location /api {
 ## Quick Links
 
 - [NeoVim](https://github.com/neovim/neovim/blob/master/INSTALL.md)
-- [NvChad](https://nvchad.com/)
+- [NvChad](https://nvchad.com)
 - [win32yank](https://github.com/equalsraf/win32yank/releases)
 - [Zoxide](https://github.com/ajeetdsouza/zoxide)
+- [fzf](https://github.com/junegunn/fzf)
 - [NVM](https://github.com/nvm-sh/nvm)
 - [NerdFonts](https://www.nerdfonts.com/font-downloads)

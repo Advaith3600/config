@@ -25,6 +25,7 @@ return {
         "typescript",
         "javascript",
         "markdown",
+        "markdown_inline",
         "php",
         "python",
       },
@@ -51,6 +52,7 @@ return {
   {
     "NMAC427/guess-indent.nvim",
     lazy = false,
+    keys = { "<leader>gi" },
     config = function()
       require("guess-indent").setup {}
     end,
@@ -79,7 +81,7 @@ return {
 
   {
     "Wansmer/treesj",
-    keys = { "<leader>m" },
+    keys = { { "<leader>mj", desc = "Treesj Toggle" } },
     requires = { "nvim-treesitter/nvim-treesitter" },
     config = function()
       require("treesj").setup {}
@@ -107,6 +109,12 @@ return {
 
   {
     "christoomey/vim-tmux-navigator",
+    keys = {
+      { "<C-h>", mode = { "n", "v" } },
+      { "<C-j>", mode = { "n", "v" } },
+      { "<C-k>", mode = { "n", "v" } },
+      { "<C-l>", mode = { "n", "v" } },
+    },
     cmd = {
       "TmuxNavigateLeft",
       "TmuxNavigateDown",
@@ -137,6 +145,16 @@ return {
     "jvgrootveld/telescope-zoxide",
     keys = {
       { "<leader>z", "<cmd>Telescope zoxide list<cr>", desc = "Zoxide" },
+    },
+  },
+
+  {
+    "OXY2DEV/markview.nvim",
+    lazy = false, -- Lazy loaded internally (according to docs)
+    cmd = { "Markview" },
+    keys = {
+      { "<leader>mm", "<cmd>Markview toggle<cr>", desc = "Mark View Toggle" },
+      { "<leader>mt", "<cmd>Markview splitToggle<cr>", desc = "Mark View Split Toggle" },
     },
   },
 }

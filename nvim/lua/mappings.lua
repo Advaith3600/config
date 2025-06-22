@@ -1,13 +1,5 @@
 require "nvchad.mappings"
 
-vim.cmd([[
-  function! SubstituteVisualSelection()
-    normal! gvy
-    let s = @"
-    call feedkeys(":%s/" . s . "/" . s . "/gIc\<Left>\<Left>\<Left>\<Left>")
-  endfunction
-]], false)
-
 local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
@@ -22,20 +14,13 @@ map("n", "<C-u>", "<C-u>zz")
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
-map("x", "<leader>p", [["_dP]])
-map({ "n", "v" }, "<leader>d", [["_d]])
+map({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yank" })
 
-map({ "n", "v" }, "<leader>y", [["+y]])
-map("n", "<leader>Y", [["+Y]])
+map("n", "<leader>fx", vim.diagnostic.open_float, {
+  desc = "Open diagnostics in floating window",
+})
 
-map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gIc<Left><Left><Left><Left>]])
-map("v", "<leader>s", ":call SubstituteVisualSelection()<CR>", { desc = "Substitute Visual Selection" })
+map("n", "<C-w>%", "<C-w>v", { desc = "Split window vertically" })
+map("n", '<C-w>"', "<C-w>s", { desc = "Split window horizontally" })
 
-map('n', '<leader>fx', vim.diagnostic.open_float)
-map('n', '<leader>fg', ':GuessIndent<CR>')
-
-map('n', "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Navigate left" })
-map('n', "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Navigate down" })
-map('n', "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Navigate up" })
-map('n', "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Navigate right" })
-
+map("n", "<C-q>", "<cmd>wqa<cr>", { desc = "Save all and quit" })
