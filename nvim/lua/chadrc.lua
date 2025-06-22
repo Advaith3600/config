@@ -5,8 +5,9 @@
 local M = {}
 
 M.base46 = {
-  theme = "catppuccin",
+  theme = "material-deep-ocean",
   transparency = true,
+  theme_toggle = { "catppuccin", "material-deep-ocean" },
 }
 
 M.ui = {
@@ -14,11 +15,10 @@ M.ui = {
     theme = "minimal",
     separator_style = "round",
   },
+}
 
-  -- hl_override = {
-  -- 	Comment = { italic = true },
-  -- 	["@comment"] = { italic = true },
-  -- },
+M.nvdash = {
+  load_on_startup = true,
 }
 
 M.mason = {

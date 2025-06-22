@@ -14,13 +14,25 @@ map("n", "<C-u>", "<C-u>zz")
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
+map({ "n", "v" }, "y", [["+y]], { desc = "Yank to system clipboard" })
+map("n", "Y", [["+Y]], { desc = "Yank to system clipboard" })
+
+map({ "n", "v" }, "p", [["+p]], { desc = "Paste below from system clipboard" })
+map("n", "P", [["+P]], { desc = "Paste above from system clipboard" })
+
+map("x", "<leader>p", [["_dP]], { desc = "Paste without yank" })
 map({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yank" })
 
 map("n", "<leader>fx", vim.diagnostic.open_float, {
   desc = "Open diagnostics in floating window",
 })
 
-map("n", "<C-w>%", "<C-w>v", { desc = "Split window vertically" })
-map("n", '<C-w>"', "<C-w>s", { desc = "Split window horizontally" })
+map("n", '<C-w>h', "<C-w>s", { desc = "Split window horizontally" })
 
 map("n", "<C-q>", "<cmd>wqa<cr>", { desc = "Save all and quit" })
+
+-- This mapping has to be here and not in the plugins page
+map('n', "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Navigate left" })
+map('n', "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Navigate down" })
+map('n', "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Navigate up" })
+map('n', "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Navigate right" })
