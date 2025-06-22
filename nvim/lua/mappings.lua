@@ -27,12 +27,13 @@ map("n", "<leader>fx", vim.diagnostic.open_float, {
   desc = "Open diagnostics in floating window",
 })
 
-map("n", '<C-w>h', "<C-w>s", { desc = "Split window horizontally" })
+map("n", "<C-w>h", "<C-w>s", { desc = "Split window horizontally" })
 
 map("n", "<C-q>", "<cmd>wqa<cr>", { desc = "Save all and quit" })
+map("n", "<C-M-n>", "<cmd>Nvdash<cr>", { desc = "Open NvDash" })
 
 -- This mapping has to be here and not in the plugins page
-map('n', "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Navigate left" })
-map('n', "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Navigate down" })
-map('n', "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Navigate up" })
-map('n', "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Navigate right" })
+map("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Navigate left" })
+map("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Navigate down" })
+map("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Navigate up" })
+map("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Navigate right" })

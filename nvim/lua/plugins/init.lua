@@ -51,7 +51,7 @@ return {
 
   {
     "NMAC427/guess-indent.nvim",
-    lazy = false,
+    event = "BufReadPre",
     keys = { "<leader>gi" },
     config = function()
       require("guess-indent").setup {}
@@ -60,7 +60,7 @@ return {
 
   {
     "Pocco81/auto-save.nvim",
-    lazy = false,
+    event = "VeryLazy",
     config = function()
       require("auto-save").setup {}
     end,
@@ -85,25 +85,6 @@ return {
     requires = { "nvim-treesitter/nvim-treesitter" },
     config = function()
       require("treesj").setup {}
-    end,
-  },
-
-  {
-    "Exafunction/windsurf.vim",
-    lazy = false,
-    config = function()
-      vim.keymap.set("i", "<C-g>", function()
-        return vim.fn["codeium#Accept"]()
-      end, { expr = true, silent = true })
-      vim.keymap.set("i", "<c-;>", function()
-        return vim.fn["codeium#CycleCompletions"](1)
-      end, { expr = true, silent = true })
-      vim.keymap.set("i", "<c-,>", function()
-        return vim.fn["codeium#CycleCompletions"](-1)
-      end, { expr = true, silent = true })
-      vim.keymap.set("i", "<c-x>", function()
-        return vim.fn["codeium#Clear"]()
-      end, { expr = true, silent = true })
     end,
   },
 
@@ -145,9 +126,17 @@ return {
     "OXY2DEV/markview.nvim",
     lazy = false, -- Lazy loaded internally (according to docs)
     cmd = { "Markview" },
+    ft = { "markdown", "copilot-chat" },
+    opts = {
+      preview = {
+        filetypes = { "markdown", "copilot-chat" },
+      },
+    },
     keys = {
       { "<leader>mm", "<cmd>Markview toggle<cr>", desc = "Mark View Toggle" },
       { "<leader>mt", "<cmd>Markview splitToggle<cr>", desc = "Mark View Split Toggle" },
     },
   },
+
+  { import = "plugins.ai" }
 }
