@@ -32,6 +32,11 @@ map("n", "<C-w>h", "<C-w>s", { desc = "Split window horizontally" })
 map("n", "<C-q>", "<cmd>wqa<cr>", { desc = "Save all and quit" })
 map("n", "<C-M-n>", "<cmd>Nvdash<cr>", { desc = "Open NvDash" })
 
+-- Copilot mappings
+vim.g.copilot_no_tab_map = true
+map("i", "<C-g>", 'copilot#Accept("")', { replace_keycodes = false, expr = true })
+map("i", "<C-x>", 'copilot#Dismiss()', { replace_keycodes = false, expr = true })
+
 -- This mapping has to be here and not in the plugins page
 map("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Navigate left" })
 map("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Navigate down" })
