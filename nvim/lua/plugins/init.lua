@@ -14,6 +14,7 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
     opts = {
       ensure_installed = {
         "vim",
@@ -110,7 +111,7 @@ return {
     "sindrets/diffview.nvim",
     cmd = { "DiffviewOpen", "DiffviewClose" },
     keys = {
-      { "<leader>go", "<cmd>DiffviewOpen<cr>", desc = "Diff View Open" },
+      { "<leader>go", "<cmd>DiffviewOpen<cr>",  desc = "Diff View Open" },
       { "<leader>gc", "<cmd>DiffviewClose<cr>", desc = "Diff View Close" },
     },
   },
@@ -125,6 +126,7 @@ return {
   {
     "OXY2DEV/markview.nvim",
     lazy = false, -- Lazy loaded internally (according to docs)
+    priority = 49,
     cmd = { "Markview" },
     ft = { "markdown", "copilot-chat" },
     opts = {
@@ -133,7 +135,7 @@ return {
       },
     },
     keys = {
-      { "<leader>mm", "<cmd>Markview toggle<cr>", desc = "Mark View Toggle" },
+      { "<leader>mm", "<cmd>Markview toggle<cr>",      desc = "Mark View Toggle" },
       { "<leader>mt", "<cmd>Markview splitToggle<cr>", desc = "Mark View Split Toggle" },
     },
   },

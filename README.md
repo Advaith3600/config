@@ -5,7 +5,16 @@
 ```bash
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt update
-sudo apt install neovim
+sudo apt install neovim zip unzip gcc
+```
+
+### NVM, FZF, Zoxide
+```bash
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+nvm install stable
 ```
 
 ## Zsh Installation
@@ -26,6 +35,11 @@ alias vim=nvim
 alias dev="cd $DEVELOPMENT_DIR"
 alias setup="cd $DEVELOPMENT_DIR/config && ./setup $1"
 
+export PATH=$PATH:/root/.local/bin
+eval "$(zoxide init zsh)"
+
+cd $DEVELOPMENT_DIR;
+
 if [ -z "$TMUX" ]
 then
     tmux has-session -t 0 2>/dev/null || { 
@@ -35,6 +49,11 @@ then
         fi 
     }; 
     exec tmux attach -t 0
+fi
+
+if [ -z "$TMUX" ]
+then
+  exec tmux;
 fi
 
 export BROWSER=$DEVELOPMENT_DIR/config/open-browser.sh
