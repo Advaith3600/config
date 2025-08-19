@@ -5,7 +5,7 @@
 ```bash
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt update
-sudo apt install neovim zip unzip gcc
+sudo apt install neovim zip unzip gcc ripgrep
 ```
 
 ### NVM, FZF, Zoxide
@@ -38,12 +38,14 @@ alias setup="cd $DEVELOPMENT_DIR/config && ./setup $1"
 export PATH=$PATH:/root/.local/bin
 eval "$(zoxide init zsh)"
 
-cd $DEVELOPMENT_DIR;
+if [[ -z "$(pwd)" || "$(pwd)" == "$HOME" ]]; then
+    cd "$DEVELOPMENT_DIR"
+fi
 
 if [ -z "$TMUX" ]
 then
     tmux has-session -t 0 2>/dev/null || { 
-        if [[ -z "$(pwd)" || "$(pwd)" == "/root" ]]; 
+        if [[ -z "$(pwd)" || "$(pwd)" == "$HOME" ]]; 
         then tmux new-session -d -s 0 -c $DEVELOPMENT_DIR;
         else tmux new-session -d -s 0 -c $(pwd); 
         fi 
@@ -51,9 +53,8 @@ then
     exec tmux attach -t 0
 fi
 
-if [ -z "$TMUX" ]
-then
-  exec tmux;
+if [ -z "$TMUX" ]; then
+    exec tmux
 fi
 
 export BROWSER=$DEVELOPMENT_DIR/config/open-browser.sh
