@@ -112,7 +112,7 @@ return {
     "sindrets/diffview.nvim",
     cmd = { "DiffviewOpen", "DiffviewClose" },
     keys = {
-      { "<leader>go", "<cmd>DiffviewOpen<cr>",  desc = "Diff View Open" },
+      { "<leader>go", "<cmd>DiffviewOpen<cr>", desc = "Diff View Open" },
       { "<leader>gc", "<cmd>DiffviewClose<cr>", desc = "Diff View Close" },
     },
   },
@@ -136,10 +136,10 @@ return {
       },
     },
     keys = {
-      { "<leader>mm", "<cmd>Markview toggle<cr>",      desc = "Mark View Toggle" },
+      { "<leader>mm", "<cmd>Markview toggle<cr>", desc = "Mark View Toggle" },
       { "<leader>mt", "<cmd>Markview splitToggle<cr>", desc = "Mark View Split Toggle" },
     },
   },
 
-  { import = "plugins.ai" }
+  { import = "plugins.ai" },
 }

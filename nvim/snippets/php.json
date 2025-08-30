@@ -1,0 +1,33 @@
+{
+    "PHPPublicFunction": {
+        "prefix": "pubf",
+        "body": [
+            "public function ${1:functionName}()",
+            "{",
+            "${2}",
+            "}"
+        ],
+        "description": "public function"
+    },
+    "PHPPrivateFunction": {
+        "prefix": "privf",
+        "body": [
+            "private function ${1:functionName}()",
+            "{",
+            "${2}",
+            "}"
+        ],
+        "description": "private function"
+    },
+    "PHPProtectedFunction": {
+        "prefix": "protf",
+        "body": [
+            "protected function ${1:functionName}()",
+            "{",
+            "${2}",
+            "}"
+        ],
+        "description": "protected function"
+    }
+}
+

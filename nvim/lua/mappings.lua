@@ -14,6 +14,11 @@ map("n", "<C-u>", "<C-u>zz")
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
+map("n", "]", "]zz", { remap = true })
+map("n", "[", "[zz", { remap = true })
+
+map({ "n", "v", "i" }, "<C-a>", "<Esc>ggVG", { desc = "Select all lines" })
+
 map({ "n", "v" }, "y", [["+y]], { desc = "Yank to system clipboard" })
 map("n", "Y", [["+Y]], { desc = "Yank to system clipboard" })
 

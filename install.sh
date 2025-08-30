@@ -8,7 +8,6 @@ sudo apt install -y neovim zip unzip gcc ripgrep zsh curl git tmux
 
 # Install Oh My Zsh (non-interactive)
 export RUNZSH=no
-export CHSH=no
 export KEEP_ZSHRC=yes
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -21,7 +20,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions \
 
 # FZF (auto install, all options enabled)
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-yes | ~/.fzf/install --all
+~/.fzf/install --all
 
 # Zoxide (binary install, skip shell config edits)
 mkdir -p ~/.local/bin
@@ -49,9 +48,9 @@ ZSHRC="$HOME/.zshrc"
 
 # Ensure plugins line includes autosuggestions + highlighting
 if grep -q "^plugins=" "$ZSHRC"; then
-    sed -i 's/^plugins=(.*)$/plugins=(git git-commit zsh-autosuggestions zsh-syntax-highlighting fzf)/' "$ZSHRC"
+    sed -i 's/^plugins=(.*)$/plugins=(git git-commit zsh-autosuggestions zsh-syntax-highlighting)/' "$ZSHRC"
 else
-    echo 'plugins=(git git-commit zsh-autosuggestions zsh-syntax-highlighting fzf)' >> "$ZSHRC"
+    echo 'plugins=(git git-commit zsh-autosuggestions zsh-syntax-highlighting)' >> "$ZSHRC"
 fi
 
 # Add zoxide init if not already present

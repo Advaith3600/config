@@ -44,7 +44,7 @@ alias vim=nvim
 alias dev="cd $DEVELOPMENT_DIR"
 alias setup="cd $DEVELOPMENT_DIR/config && ./setup $1"
 
-export PATH=$PATH:/root/.local/bin
+export PATH=$PATH:$HOME/.local/bin
 eval "$(zoxide init zsh)"
 
 if [[ -z "$(pwd)" || "$(pwd)" == "$HOME" ]]; then
