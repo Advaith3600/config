@@ -10,7 +10,8 @@ local servers = {
   "pyright",
   "emmet_language_server",
   "marksman",
-  "phpactor"
+  "phpactor",
+  "laravel_ls",
 }
 
 vim.lsp.enable(servers)

@@ -33,6 +33,7 @@ map("n", "<C-q>", "<cmd>wqa<cr>", { desc = "Save all and quit" })
 map("n", "<C-M-n>", "<cmd>Nvdash<cr>", { desc = "Open NvDash" })
 
 -- Copilot mappings
+vim.g.copilot_enabled = false
 vim.g.copilot_no_tab_map = true
 map("i", "<C-g>", 'copilot#Accept("")', { replace_keycodes = false, expr = true })
 map("i", "<C-x>", 'copilot#Dismiss()', { replace_keycodes = false, expr = true })

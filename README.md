@@ -1,20 +1,17 @@
 # Personal Configuration 
 
+## Quick Install 
+
+```bash
+curl https://raw.githubusercontent.com/Advaith3600/config/refs/heads/main/install.sh | bash
+```
+
 ## Neovim Installation
 
 ```bash
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt update
 sudo apt install neovim zip unzip gcc ripgrep
-```
-
-### NVM, FZF, Zoxide
-```bash
-curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-nvm install stable
 ```
 
 ## Zsh Installation
@@ -25,10 +22,22 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
-```bash
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+## NVM, FZF, Zoxide
 
-DEVELOPMENT_DIR="~/development"
+```bash
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+nvm install stable
+```
+
+## ~/.zshrc config
+
+```bash
+plugins=(git git-commit zsh-autosuggestions zsh-syntax-highlighting)
+
+DEVELOPMENT_DIR="$HOME/development"
 
 alias art="php artisan"
 alias vim=nvim
@@ -56,22 +65,6 @@ fi
 if [ -z "$TMUX" ]; then
     exec tmux
 fi
-
-export BROWSER=$DEVELOPMENT_DIR/config/open-browser.sh
-```
-
-## Install xdg-open for WSL (For windsurf chat)
-
-```bash
-sudo apt install xdg-utils
-```
-
-## Ubuntu update (fzf requires latest version)
-
-```bash
-lsb_release -a
-vim /etc/update-manager/release-upgrades
-do-release-upgrade
 ```
 
 ## SSH Keygen

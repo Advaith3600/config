@@ -29,6 +29,7 @@ return {
         "markdown_inline",
         "php",
         "python",
+        "blade",
       },
     },
   },
