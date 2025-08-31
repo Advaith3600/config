@@ -14,8 +14,8 @@ map("n", "<C-u>", "<C-u>zz")
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
-map("n", "]", "]zz", { remap = true })
-map("n", "[", "[zz", { remap = true })
+map("n", "}", "}zz", { remap = true })
+map("n", "{", "{zz", { remap = true })
 
 map({ "n", "v", "i" }, "<C-a>", "<Esc>ggVG", { desc = "Select all lines" })
 
@@ -48,3 +48,7 @@ map("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Navigate left" })
 map("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Navigate down" })
 map("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Navigate up" })
 map("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Navigate right" })
+
+-- Telescope
+map("n", "<leader>fr", require("telescope.builtin").resume, { desc = "Resume last Telescope picker" })
+
