@@ -35,8 +35,8 @@ M.mason = {
     "emmet-language-server",
     "marksman",
     "phpactor",
+    "pint", -- Laravel Pint
     "laravel-ls",
-    "php-cs-fixer",
   },
 }
 

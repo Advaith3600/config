@@ -10,7 +10,7 @@ local options = {
     typescriptreact = { "prettier" },
     json = { "prettier" },
     scss = { "prettier" },
-    php = { "php-cs-fixer" },
+    php = { "pint" },
   },
 
   -- format_on_save = {
