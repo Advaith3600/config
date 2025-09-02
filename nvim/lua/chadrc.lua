@@ -5,9 +5,9 @@
 local M = {}
 
 M.base46 = {
-  theme = "material-deep-ocean",
+  theme = "catppuccin",
   transparency = true,
-  theme_toggle = { "catppuccin", "material-deep-ocean" },
+  theme_toggle = { "material-deep-ocean", "catppuccin" },
 }
 
 M.ui = {
